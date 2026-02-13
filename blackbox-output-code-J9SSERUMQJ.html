@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Kiss Day, Abha 💋❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@400;700&family=Pacifico&display=swap" rel="stylesheet"> <!-- Cute and romantic fonts -->
+    <style>
+        /* Mobile-first responsive design with cute, romantic visuals */
+        body {
+            font-family: 'Dancing Script', cursive; /* Flowing romantic font for body */
+            background: linear-gradient(135deg, #ffb3ba, #ffffff, #ffdfba); /* Cute pink and white mix */
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            text-align: center;
+            min-height: 100vh;
+            position: relative;
+        }
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="%23ffffff" opacity="0.2"/></svg>') repeat;
+            animation: sparkle 4s infinite;
+            pointer-events: none;
+        }
+        @keyframes sparkle {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 0.4; }
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        h1 {
+            font-family: 'Pacifico', cursive; /* Cute, playful handwritten font for title */
+            font-size: 3.5em;
+            font-weight: normal; /* Lighter for cuteness */
+            color: #ffd700; /* Soft gold */
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3), 0 0 20px #ffb3ba; /* Softer shadows */
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-in, bounce 3s infinite;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        .heart {
+            font-size: 60vw; /* Really big heart covering 60% of screen width */
+            color: #ff69b4; /* Hot pink for cuteness */
+            cursor: pointer;
+            animation: pulse 1s infinite, bounce 2s infinite;
+            display: inline-block;
+            margin: 30px 0; /* Better positioning */
+            filter: drop-shadow(0 0 15px #ffb3ba); /* Soft glow */
+            transition: transform 0.3s;
+        }
+        .heart:hover { transform: scale(1.05); } /* Subtle hover for big size */
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; box-shadow: 0 0 0 0 rgba(255, 105, 180, 0.5); }
+            50% { transform: scale(1.02); opacity: 0.9; box-shadow: 0 0 0 15px rgba(255, 105, 180, 0); }
+        }
+        .letter {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(255, 182, 193, 0.9), rgba(230, 230, 250, 0.8)); /* Pastel whites, pinks, lavenders */
+            border-radius: 60px; /* Softer, cuter rounded shape */
+            padding: 40px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2), inset 0 0 20px rgba(255, 215, 0, 0.4); /* Lighter shadows */
+            margin: 20px 0;
+            font-style: italic;
+            line-height: 1.9;
+            display: none;
+            position: relative;
+            overflow: hidden;
+            animation: reveal 3s ease-out;
+        }
+        .letter::before {
+            content: "💋❤️✨"; /* More cute emojis */
+            font-size: 3em;
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: float 2s infinite;
+        }
+        @keyframes reveal {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-10px); }
+        }
+        .letter h2 {
+            font-family: 'Great Vibes', cursive; /* Elegant script for headings */
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #e91e63; /* Soft red-pink */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 15px;
+        }
+        .letter p {
+            font-family: 'Dancing Script', cursive; /* Flowing romantic font */
+            font-size: 1.2em;
+            font-weight: 700; /* Bolder for emphasis */
+            color: #333;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+            margin: 12px 0;
+            animation: typewriter 5s steps(50, end) forwards;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 3px solid #ff69b4; /* Cute pink cursor */
+        }
+        @keyframes typewriter {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8); /* Softer overlay */
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            animation: fadeIn 0.5s;
+        }
+        .popup-content {
+            background: linear-gradient(145deg, #ffb3ba, #ffdfba, #e6e6fa); /* Pastel gradients */
+            padding: 30px;
+            border-radius: 30px; /* Cuter rounded corners */
+            text-align: center;
+            max-width: 90%;
+            box-shadow: 0 0 30px rgba(255, 179, 186, 0.7); /* Soft glow */
+            position: relative;
+        }
+        .kiss-animation {
+            font-size: 5em;
+            animation: kissPulse 1s infinite, confetti 2s infinite;
+        }
+        @keyframes kissPulse {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.3) rotate(5deg); }
+        }
+        @keyframes confetti {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+        button {
+            font-family: 'Pacifico', cursive; /* Cute font for buttons */
+            background: linear-gradient(45deg, #ff69b4, #ffd700); /* Pastel pink to gold */
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 30px; /* Cuter rounded */
+            cursor: pointer;
+            font-size: 1.3em;
+            font-weight: normal; /* Lighter for playfulness */
+            margin: 10px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Softer shadows */
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+        /* Enhanced heart particles for cuteness - Lot of hearts flying everywhere */
+        .hearts {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        .heart-particle {
+            position: absolute;
+            font-size: 2.5em;
+            color: #ffb3ba; /* Pastel pink hearts */
+            animation: float 6s linear infinite, bounce 4s infinite;
+            opacity: 0.8;
+        }
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0.8; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+        /* Mobile-specific styles */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.8em; }
+            .heart { font-size: 50vw; } /* Slightly smaller on mobile for better fit, still huge */
+            .letter { padding: 25px; }
+            .letter h2 { font-size: 2em; }
+            .letter p { font-size: 1em; }
+            .popup-content { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="hearts" id="hearts"></div>
+    <div class="container">
+        <h1>Happy Kiss Day, Abha 💋❤️</h1>
+        <p>Tap the heart to unlock my love...</p>
+        <div class="heart" id="unlock-heart">❤️</div>
+        
+        <div class="letter" id="letter">
+            <h2>My Dearest Abha,</h2>
+            <p>Happy Kiss Day, my love 💋❤️</p>
+            <p>Today is about kisses — soft, loving, and full of emotions. And even though miles separate us, my heart still finds its way to you.</p>
+            <p>In these five years, we’ve shared so many feelings, so many dreams, so many silent moments where words weren’t even needed. If I were with you right now, I would gently hold your face, look into your eyes, and place the softest kiss on your forehead — a kiss full of respect, love, and forever.</p>
+            <p>Not just a kiss of romance…</p>
+            <p>But a kiss that says:</p>
+            <p>“I’m yours.”</p>
+            <p>“I choose you.”</p>
+            <p>“I will always stay.”</p>
+            <p>Sometimes I imagine the day when distance won’t exist between us. The first real kiss after all this waiting — it won’t just be a kiss, it will be five years of love, patience, loyalty, and longing finally meeting.</p>
+            <p>Until that day comes, I’m sending you my sweetest virtual kiss 💋✨</p>
+            <p>Close your eyes and feel it.</p>
+            <p>You are my love, my peace, my forever.</p>
+            <p>Happy Kiss Day, Abha ❤️</p>
+            <p>Always yours,</p>
+            <p>Abhay</p>
+        </div>
+        
+        <button onclick="openPopup()">Open My Kiss Surprise 💋</button>
+    </div>
+    
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <div class="kiss-animation">💋❤️✨</div>
+            <p id="romantic-message">My love, this kiss is just for you. Feel the warmth, the passion, the eternity. 💕</p>
+            <button onclick="closePopup()">Close</button>
+        </div>
+    </div>
+    
+    <audio id="heartbeat" loop>
+        <source src="https://www.soundjay.com/misc/sounds/heartbeat-01.wav" type="audio/wav">
+    </audio>
+    
+    <script>
+        // Enhanced heart particles (increased for more cuteness - lot of hearts flying everywhere)
+        function createHearts() {
+            const heartsContainer = document.getElementById('hearts');
+            for (let i = 0; i < 150; i++) { // Increased to 150 for "lot of hearts"
+                const heart = document.createElement('div');
+                heart.className = 'heart-particle';
+                heart.textContent = '❤️';
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.animationDelay = Math.random() * 6 + 's';
+                heartsContainer.appendChild(heart);
+            }
+        }
+        createHearts();
+        
+        // Unlock heart functionality with enhanced reveal - Fixed tap issue with flag to prevent multiple triggers
+        const unlockHeartElement = document.getElementById('unlock-heart');
+        let tapped = false;
+        function handleUnlock(event) {
+            event.preventDefault();
+            if (!tapped) {
+                tapped = true;
+                console.log('Heart tapped!');
+                unlockHeart();
+            }
+        }
+        unlockHeartElement.addEventListener('click', handleUnlock);
+        unlockHeartElement.addEventListener('touchstart', handleUnlock, { passive: false });
+        
+        function unlockHeart() {
+            document.getElementById('letter').style.display = 'block';
+            document.getElementById('unlock-heart').style.display = 'none';
+            playHeartbeat();
+        }
+        
+        // Heartbeat sound and vibration sync with glowing pulse - Enhanced for realistic heartbeat
+        let beatCount = 0; // Counter for rising intensity
+        let lubDuration = 100; // Initial lub vibrate duration (ms)
+        let dubDuration = 150; // Initial dub vibrate duration (ms)
+        const maxLub = 200; // Max lub duration
+        const maxDub = 300; // Max dub duration
+        const bpm = 100; // Beats per minute (85-110 range, using 100 for average)
+        const intervalMs = (60 / bpm) * 1000; // ~600ms per beat
+        
+        function playHeartbeat() {
+            const audio = document.getElementById('heartbeat');
+            audio.play();
+            // Sync pulse, glow, and heartbeat vibration every beat
+            setInterval(() => {
+                const heart = document.querySelector('.heart');
+                if (heart) {
+                    heart.style.animation = 'pulse 1s infinite';
+                    heart.style.filter = 'drop-shadow(0 0 20px #ffb3ba)';
+                }
+                // Realistic heartbeat vibration: lub-dub pattern with rising intensity
+                if (navigator.vibrate) {
+                    const pattern = [lubDuration, 100, dubDuration, intervalMs - lubDuration - 100 - dubDuration]; // Lub, pause, dub, pause
+                    navigator.vibrate(pattern);
+                }
+                // Gradually increase intensity (rising effect)
+                beatCount++;
+                if (beatCount % 10 === 0 && lubDuration < maxLub) { // Every 10 beats, increase by 10%
+                    lubDuration = Math.min(maxLub, lubDuration * 1.1);
+                    dubDuration = Math.min(maxDub, dubDuration * 1.1);
+                }
+            }, intervalMs);
+        }
+        
+        // Array of romantic messages for the popup
+        const romanticMessages = [
+            "My love, this kiss is just for you. Feel the warmth, the passion, the eternity. 💕",
+            "With every kiss, I fall deeper in love with you. 💋❤️",
+            "Your kiss is my favorite hello and hardest goodbye. ✨",
+            "In your arms, every kiss feels like home. 🌹💖",
+            "Kissing you is like tasting forever. 💋🌟"
+        ];
+        let messageIndex = 0;
+        
+        // Popup functions with confetti effect and dynamic message
+        function openPopup() {
+            document.getElementById('popup').style.display = 'flex';
+            // Update the message
+            document.getElementById('romantic-message').textContent = romanticMessages[messageIndex];
+            messageIndex = (messageIndex + 1) % romanticMessages.length; // Cycle through messages
+            // Add confetti burst
+            for (let i = 0; i < 20; i++) {
+                const confetti = document.createElement('div');
+                confetti.textContent = '💖';
+                confetti.style.position = 'absolute';
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.top = '50%';
+                confetti.style.fontSize = '2em';
+                confetti.style.animation = 'confetti 2s ease-out';
+                document.body.appendChild(confetti);
+                setTimeout(() => confetti.remove(), 2000);
+            }
+        }
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+        
+        // Auto-play heartbeat on interaction
+        document.addEventListener('click', () => {
+            document.getElementById('heartbeat').play();
+        });
+    </script>
+</body>
+</html>
